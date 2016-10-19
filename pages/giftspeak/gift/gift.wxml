@@ -1,0 +1,41 @@
+<view class="container">
+<!-- topnav -->
+    <view class="nav">
+        <view class="navcontent">
+            <block wx:for="{{nav}}" wx:for-index="index" wx:for-item="item">
+                <text  class="{{ navindex == index  ? 'active': ''  }}" data-item="{{index}}" bindtap="navTap">{{item}}</text>
+            </block>
+        </view>
+        <view class="navline">
+            <view class="line"></view>
+        </view>
+    </view>
+    
+    <!-- list -->
+    
+    <swiper class="mianswiper" duration="300" current="{{navindex}}" bindchange="bindchange">
+    	<block wx:for="{{content}}" wx:for-item="item" wx:for-index="index">
+	    	<swiper-item class="mainitem">
+			    <scroll-view scroll-y="true">
+			    	<view class="bigimg">
+			    		<image src="{{item.cover_image}}"></image>
+			    	</view>
+			    	<view class="listbox">
+				    	<block wx:for="{{item.data}}" wx:for-index="ind" wx:for-item="value">
+				    		<view class="item">
+				    			<image src="{{value.cover_image_url}}"></image>
+				    			<view class="h3">{{value.short_description}}</view>
+				    			<view class="p">{{value.name}}</view>
+				    			<view class="span">￥{{ value.price}}</view>
+				    		</view>
+				    	</block>
+			    	</view>
+			    </scroll-view>
+		    	
+		    </swiper-item>
+	    </block>
+    </swiper>
+    
+
+
+</view>

@@ -1,0 +1,72 @@
+<!--  -->
+<view class="container">
+	<view class="top">
+		<view class="span active ">攻略</view>
+		<view class="span">单品</view>
+	</view>
+	<view class="input"> <image src="/res/drawable-xxhdpi-v4/nav_bar_icon_search_dark.png"/><text>选份走心好礼送给Ta</text></view>
+	
+	<swiper class="swiper">
+		<swiper-item class="swiperitem">
+			<scroll-view class="scrollcol" scroll-y="true">
+				<view class="item"  style="margin-top: 10px;">
+					<view class="title">
+						<view class="left">栏目</view>
+						<view class="right">查看全部>></view>
+					</view>
+					<scroll-view class="gl-scroll" scroll-x="true">
+						<block wx:for="{{lanmu}}" wx:for-index="index" wx:for-item="item">
+							<view class="gl-scroll-col">
+								<block wx:for="{{item}}" wx:for-index="ind" wx:for-item="value">
+									<view class="gl-scroll-item">
+										<image src="{{value.banner_image_url}}"></image>
+										<view class="box">
+											<view class="h">{{value.title}}</view>
+											<view class="span">{{value.author}}</view>
+										</view>
+									</view>
+								</block>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+				<block wx:for="{{groups}}" wx:for-index="index" wx:for-item="item">
+					<view class="item">
+						<view class="title">
+							<view class="left">{{item.name}}</view>
+							<view class="right">查看全部>></view>
+						</view>
+						
+						<block wx:for="{{item.channels}}" wx:for-index="ind" wx:for-item="value" >
+							<view wx:if="{{ ind < 6}}" data-id="{{ind}}" class="con" >
+								<image src="{{value.cover_image_url}}"></image>
+							</view>
+						</block>
+					</view>
+				</block>
+			</scroll-view>
+		</swiper-item>
+		<swiper-item class="swiperitem">
+			<scroll-view class="leftscroll" scroll-y="true" >
+				<block  wx:for="{{categories}}"   wx:for-index="index" wx:for-item="value">
+					<view  class="{{ listItem  == index ? 'active' : '' }}" >{{value.name}}</view>	
+				</block>
+			</scroll-view>
+			<scroll-view class="conscroll" scroll-y="true" > 
+				<block wx:for="{{categories}}" wx:for-index="index" wx:for-item="value">
+					<view class="list-box">
+						<view class="list-title">{{value.name}}</view>
+						<view class="list-con" >
+							<view class="list-item" wx:for="{{value.subcategories}}" wx:for-index="ind" wx:for-item="item">
+								<image src="{{item.icon_url}}"></image>
+								<view class="span">{{item.name}}</view>
+							</view>
+						</view>
+					</view>
+				</block>
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+	
+
+</view>

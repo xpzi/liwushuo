@@ -1,0 +1,18 @@
+page {
+  height: 100%; }
+  page .container {
+    height: 100%; }
+    page .container .top {
+      height: 40px;
+      width: 100%;
+      text-align: center;
+      line-height: 40px; }
+      page .container .top .active {
+        color: #F06D05; }
+      page .container .top .span {
+        display: inline-block;
+        height: 40px;
+        margin: 0 10px;
+        color: #888;
+        padding: 0 5px;
+        background: #FAEBCC; }

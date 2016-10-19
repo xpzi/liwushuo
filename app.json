@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/giftspeak/index/index",
+    "pages/giftspeak/category/cate",
+    "pages/giftspeak/gift/gift",
+    "pages/giftspeak/index/content",
+    "pages/giftspeak/profile/profile",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "礼物说",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#666666",
+    "selectedColor":"#ff6666",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"white",
+    "list":[
+      {
+        "pagePath":"pages/giftspeak/index/index",
+        "text":"首页",
+        "iconPath":"/res/drawable-xhdpi-v4/ic_tab_home_normal.png",
+        "selectedIconPath":"/res/drawable-xhdpi-v4/ic_tab_home_selected.png"
+      },{
+        "pagePath":"pages/giftspeak/gift/gift",
+        "text":"榜单",
+        "iconPath":"/res/drawable-xhdpi-v4/ic_tab_gift_normal.png",
+        "selectedIconPath":"/res/drawable-xhdpi-v4/ic_tab_gift_selected.png"
+      },{
+        "pagePath":"pages/giftspeak/category/cate",
+        "text":"分类",
+        "iconPath":"/res/drawable-xhdpi-v4/ic_tab_category_normal.png",
+        "selectedIconPath":"/res/drawable-xhdpi-v4/ic_tab_category_selected.png"
+      },{
+        "pagePath":"pages/giftspeak/profile/profile",
+        "text":"我的",
+        "iconPath":"/res/drawable-xhdpi-v4/ic_tab_profile_normal.png",
+        "selectedIconPath":"/res/drawable-xhdpi-v4/ic_tab_profile_selected.png"
+      }
+    ]
+  }
+}

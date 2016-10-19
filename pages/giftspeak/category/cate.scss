@@ -1,0 +1,208 @@
+page{
+    height: 100%;
+    
+    .container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        .top{
+            height: 40px;
+            width:100%;
+            text-align: center;
+            line-height: 30px;
+
+            .span{
+                display: inline-block;
+                height: 30px;
+                margin: 5px 10px;
+                color: #888;
+                padding:0px 5px;
+            }
+            .active{
+                color:#FF5500;
+                border-bottom: 2px solid #FF5500;
+            }
+        }
+        .input{
+            height: 30px;
+            margin: 0 2%;
+            width: 96%;;
+            background: #FFFaFa;
+            border-radius: 5px;
+            line-height: 30px;
+            text-align: center;
+            display: block;
+            
+            image{
+                 width: 16px;
+                 height: 16px;
+                 margin-bottom:-2px;
+                 padding:0 2px;
+            }
+        }
+        
+        .swiper{
+            width: 100%;
+            flex: 1;
+            
+            .swiperitem{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                
+  //              .leftscroll{
+                      width: 80px;
+                      height: 100%;
+                      background: #EEEEEE;    
+                      view{
+                          width:80px;
+                          height: 40px;
+                          line-height: 40px;
+                          text-align: center;
+                          box-sizing: border-box;       
+                      }
+                      .active{
+                         color:#FF5555;
+                         border-left: 2px solid #ff5555; 
+                      }
+                }
+                
+                
+                .conscroll{
+                    height: 100%;
+                    flex:1;
+                    
+                    .list-box{
+                        
+                        .list-title{
+                            padding-top:10px ;
+                            text-align: center;
+                            height: 40px;
+                            line-height: 50px;
+                            color:#888;
+                        }
+                        .list-con{
+                            display: flex;
+                            flex-wrap: wrap;
+                            
+                            .list-item{
+                                width:33.333%;
+                                height:100px;
+                                display: inline-block;
+                                
+                                image{
+                                    width:100%;
+                                    height: 70px;
+                                }
+                                .span{
+                                    height: 30px;
+                                    width: 100%;
+                                    line-height: 30px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                    color: #666;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .scrollcol{
+                    width:100%;
+                    height: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    background: #FFF0F0;
+                    
+                    
+                   
+                    .item{
+                        background:#ffffff;
+                        margin-bottom: 10px;
+                        
+                        
+                        .title{
+                            height: 30px;
+                            line-height: 30px;
+                            display: flex;
+                            width:100%;
+                            box-sizing: border-box;
+                            justify-content: space-between;
+                            font-size: 12px;
+                            padding:0 2%;
+                            .left{
+                                color:#333;
+                            }
+                            .right{
+                                color:#999;
+                            }
+                        }
+                        .con{
+                            box-sizing: border-box;
+                            width:50%;
+                            padding:5px;
+                            height: 100px;
+                            display: inline-flex;
+                            
+                            image{
+                                width: 100%;
+                                height: 100%; 
+                            }
+                        }
+                        
+                          // 里边的scroll
+                        .gl-scroll{
+                            height: 200px;
+                            width: 100%;
+//                          display: flex;
+//                          flex-wrap: nowrap;
+                               white-space: nowrap;
+                            
+                            .gl-scroll-col{
+//                              display: inline-flex;
+                                display: inline-block;
+                                width: 70%;
+                                height: 100%;
+                                margin:0 10px;
+                                
+                                .gl-scroll-item{
+                                    width: 100%;
+                                    height:33.3333%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-size: 12px;
+                                    
+                                    image{
+                                        width:50%;
+                                        height:80%;
+                                    }
+                                    .box{
+                                        width:50%;
+                                        height:80%;
+                                        .h{
+                                            padding: 5px 0 0 5px;
+                                            color:#222;
+                                        }
+                                        .span{
+                                            padding: 10px 0 0 5px;
+                                            color:#ccc;
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+        
+    }
+
+}
+

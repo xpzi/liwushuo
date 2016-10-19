@@ -1,0 +1,30 @@
+<view class="container">
+	
+	<view class="header">
+		<text>&lt;</text>
+		<text>查看全集</text>
+	</view>
+	<view class="content">
+		<scroll-view scroll-y="true">
+			<view class="top"><image src="{{conten.cover_image_url}}"></image></view>
+			<view class="h2">{{conten.title}}</view>
+			<view class="html">
+				<block wx:for="{{conten.html}}" wx:for-index="index" wx:for-item="item">
+					<block wx:if="{{item.type == 'text'}}">
+						<view>{{item.text}}</view>
+					</block>
+					<block wx:if="{{item.type == 'image'}}">
+						<image src="{{item.text}}"></image>
+					</block>
+				</block>
+				
+			</view>
+		</scroll-view>
+		
+		<view class="footer">
+			<view><image src="/res/drawable-xhdpi-v4/ic_action_compact_favourite_normal.png"></image><text>{{conten.likes_count}}</text></view>
+			<view><image src="/res/drawable-xhdpi-v4/ic_action_compact_share_product.png"></image> <text>{{conten.shares_count}}</text> </view>
+			<view><image src="/res/drawable-xhdpi-v4/ic_action_compact_comment.png"></image><text>{{conten.comments_count}}</text></view>
+		</view>
+	</view>
+</view>

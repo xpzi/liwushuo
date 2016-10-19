@@ -1,0 +1,80 @@
+<!--  首页  -->
+
+<view class="container">
+
+
+
+    <!-- top  -->
+    <view class="top">
+        <div class="logo">
+        	<image src="/res/drawable-xxhdpi-v4/logo_title_c.png"/>
+		</div>
+		<div class="forma">
+			<image src="/res/drawable-xxhdpi-v4/nav_bar_icon_search_dark.png"/>
+			<text>选份走心好礼送给Ta</text>
+		</div>
+		<div class="time">
+			<image src="/res/drawable-xxhdpi-v4/time_commodity_night.png"/>
+		</div>
+    </view>
+    
+
+    <!-- nav -->
+    <view class="nav">
+    	<scroll-view class="navscroll"  scroll-into-view="{{navTextId}}" scroll-x>
+    		<block wx:for="{{navdata}}" wx:for-item="item" >
+				<text id="navText{{index}}" class="{{navCurrent == index ? 'active' : '' }}" bindtap="pageSwiper" data-item="{{index}}">{{item.name}}</text>
+			</block>
+    	</scroll-view>
+    </view>	
+
+	
+	
+	<!--  viewpage 左右滑动 -->
+	<swiper class="pageview" bindchange="swiperchang" current="{{pageCurrent}}">
+
+		<!-- 第一层循环 -->
+		<block wx:for="{{pageList}}" wx:for-item="item"  wx:for-index="ind">
+			<swiper-item class="pageviewitem" wx:if="{{item.isinit}}" >
+				
+				<!-- view list -->
+				<scroll-view class="mianscroll" style="overflow:hidden;" id="scrollList" scroll-y="true" 
+					scroll-top="{{scrollTop}}"	
+					bindscroll="refreshscroll" bindscrolltoupper="refreshToupper" 
+					bindscrolltolower="refreshTolower"	bindtouchstart="refreshtouchStart"
+					bindtouchend="refreshtouchEnd" bindtouchmove="refreshtouchMove">
+
+					<view class="listview"  >
+						<!-- 顶部刷新 -->
+						<view class="pullrefresh" style="margin-top:{{margintop}}px;"  hidden="{{downpullrefresh}}" >{{pullrefreshtext}}</view>
+						
+						<!-- banner图图 只在第一个page里面有 -->
+						<block wx:if="{{ind < 1}}">
+							<swiper class="swiperbanner" indicator-dots="{{indicatorDots}}" >
+								<swiper-item class="banner" wx:for="{{banner}}"  wx:for-item="bannerItem" >
+									<image src="{{bannerItem.image_url}}"></image>
+								</swiper-item>
+							</swiper>
+						</block>
+						
+						<!-- 列表 循环渲染  -->
+						<block wx:for="{{item.data}}"  wx:for-item="value">
+							<view class="listbox" bindtap="navigateTo" data-id="{{value.id}}">
+								<image src="{{value.cover_image_url}}"></image>
+								<view class="h3">{{value.title}}</view>
+								<view class="p">{{value.introduction}}</view>
+								<view class="info">
+									<span class="left">栏目<b>{{value.column.title}}</b></span>
+									<span class="right"><i></i>{{value.likes_count}}</span>
+								</view>
+							</view>
+						</block>
+
+						<!-- 底部加载 -->
+						<view class="pullrefresh" style="padding-bottom:{{-marginbottom}}px;"  hidden="{{uppullrefresh}}" >{{pullrefreshtext}}</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
